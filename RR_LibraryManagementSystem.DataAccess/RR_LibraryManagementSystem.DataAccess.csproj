@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DbConn\" />
+    <None Remove="Interface\" />
+    <None Remove="Repository\" />
+    <None Remove="Domain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DbConn\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Domain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+  </ItemGroup>
+</Project>
