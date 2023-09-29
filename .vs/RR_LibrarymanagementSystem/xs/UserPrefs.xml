@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{BFDBA5BC-BDDC-4A61-8CC7-B79D3A556285}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.RR__LibrarymanagementSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Controllers/UserController.cs" relfile="RR_LibrarymanagementSystem/Controllers/UserController.cs" line="41" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="RR_LibraryManagementSystem.DataAccess/Repository/UserAuth_Repository.cs">
+    <Files>
+      <File FileName="RR_LibrarymanagementSystem/Controllers/UserController.cs" Line="65" Column="52" />
+      <File FileName="RR_LibrarymanagementSystem/Views/User/Login.cshtml" Line="29" Column="80" />
+      <File FileName="RR_LibrarymanagementSystem/Views/User/Signup.cshtml" Line="1" Column="62" />
+      <File FileName="RR_LibrarymanagementSystem/Views/User/Index.cshtml" Line="1" Column="1" />
+      <File FileName="RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_Header.cshtml" Line="18" Column="21" />
+      <File FileName="RR_LibraryManagementSystem.DataAccess/Repository/UserAuth_Repository.cs" Line="77" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RR_LibrarymanagementSystem">
+            <Node name="RR_LibrarymanagementSystem">
+              <Node name="Views">
+                <Node name="Shared" expanded="True">
+                  <Node name="ClientLayout" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="RR_LibraryManagementSystem.DataAccess" expanded="True">
+              <Node name="Repository" expanded="True">
+                <Node name="UserAuth_Repository.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

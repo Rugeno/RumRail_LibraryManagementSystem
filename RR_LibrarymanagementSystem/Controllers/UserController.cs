@@ -20,13 +20,59 @@ namespace RR_LibrarymanagementSystem.Controllers
         public UserController(IUserAuth userAuth)
         {
             _userAuth = userAuth;
-           
+
         }
         public IActionResult Index()
         {
-        
+
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Signup()
+        {
+            ViewBag.Message = null;
+            Signup_VM obj = new Signup_VM();
+            return View(obj);
+        }
+
+
+        [HttpPost]
+        public IActionResult Signup(Signup_VM obj)
+        {
+            if (ModelState.IsValid)
+            {
+                string msg = _userAuth.CheckEmailExist(obj.Email);
+                if (msg == "SUCCESS")
+                {
+                    ViewBag.Message = "Email already Exist !!!";
+                    return View();
+                }
+
+                if (obj.Password != obj.ConfirmPassword)
+                {
+                    ViewBag.Message = "Password Doesnot Match !!!";
+                    return View();
+                }
+
+                Save_PortalUser data = new Save_PortalUser();
+                data.FullName = obj.FullName;
+                data.Email = obj.Email;
+                data.PhoneNo = obj.PhoneNo;
+                data.Password = obj.Password;
+                data.Role = 2; //User Role
+
+                string output = _userAuth.SaveUserData(data);
+                if (output == "SUCCESS")
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            return View();
+        }
+
+
+
 
         [HttpGet]
         public IActionResult Login()
@@ -84,4 +130,3 @@ namespace RR_LibrarymanagementSystem.Controllers
 
     }
 }
-

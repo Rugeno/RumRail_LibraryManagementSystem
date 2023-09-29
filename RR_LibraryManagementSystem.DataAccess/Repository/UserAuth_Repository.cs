@@ -22,7 +22,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
         {
             try
             {
-                using (var conn = new SqlConnection(_connection.DBConn))
+                using (var conn = new SqlConnection(_connection.DBConnection))
                 {
                     DynamicParameters param = new DynamicParameters();
                     param.Add("@Email", email);
@@ -40,7 +40,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
         {
             try
             {
-                using (var conn = new SqlConnection(_connection.DBConn))
+                using (var conn = new SqlConnection(_connection.DBConnection))
                 {
                     DynamicParameters param = new DynamicParameters();
                     param.Add("@Email", obj.Email);
@@ -59,7 +59,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
         {
             try
             {
-                using (var conn = new SqlConnection(_connection.DBConn))
+                using (var conn = new SqlConnection(_connection.DBConnection))
                 {
                     DynamicParameters param = new DynamicParameters();
                     param.Add("@Email", obj.Email);
@@ -78,7 +78,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
         {
             try
             {
-                using (var conn = new SqlConnection(_connection.DBConn))
+                using (var conn = new SqlConnection(_connection.DBConnection))
                 {
                     DynamicParameters param = new DynamicParameters();
                     param.Add("@FullName", obj.FullName);

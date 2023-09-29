@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj": {}
+    "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj": {}
   },
   "projects": {
-    "/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj": {
+    "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj",
+        "projectUniqueName": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj",
         "projectName": "RR_LibraryManagementSystem.DataAccess",
-        "projectPath": "/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj",
+        "projectPath": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibraryManagementSystem.DataAccess/RR_LibraryManagementSystem.DataAccess.csproj",
         "packagesPath": "/Users/shivan/.nuget/packages/",
-        "outputPath": "/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibraryManagementSystem.DataAccess/obj/",
+        "outputPath": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibraryManagementSystem.DataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shivan/.nuget/NuGet/NuGet.Config"

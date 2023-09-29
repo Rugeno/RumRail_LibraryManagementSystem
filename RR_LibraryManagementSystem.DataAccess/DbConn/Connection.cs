@@ -3,7 +3,7 @@ namespace RR_LibraryManagementSystem.DataAccess.DbConn
 {
 	public class ConnectionStrings
 	{
-		public string DBConn { get; set; }
+		public string DBConnection { get; set; }
 	}
 }
 

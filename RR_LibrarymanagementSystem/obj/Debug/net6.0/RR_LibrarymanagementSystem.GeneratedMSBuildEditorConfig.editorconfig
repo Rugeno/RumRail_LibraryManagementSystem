@@ -9,61 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RR_LibrarymanagementSystem
 build_property.RootNamespace = RR_LibrarymanagementSystem
-build_property.ProjectDir = /Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/
+build_property.ProjectDir = /Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem
+build_property.MSBuildProjectDirectory = /Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Home/Index.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Home/Privacy.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/Adminlayout/_AdminLoginLayout.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/Adminlayout/_AdminLoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0FkbWlubGF5b3V0L19BZG1pbkxvZ2luTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_ClientLayout.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_ClientLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NsaWVudExheW91dC9fQ2xpZW50TGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_Footer.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NsaWVudExheW91dC9fRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_Header.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/ClientLayout/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NsaWVudExheW91dC9fSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/Error.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/User/Index.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/User/Login.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/_ViewImports.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/User/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9TaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/_ViewStart.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/shivan/Projects/RR_LibrarymanagementSystem/RR_LibrarymanagementSystem/Views/Shared/_Layout.cshtml]
+[/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-l25vp8y0dr

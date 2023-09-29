@@ -4,19 +4,26 @@ using RR_LibraryManagementSystem.DataAccess.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+//Cookie Authentication
 builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
 {
     options.Cookie.Name = "MyCookieAuth";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
     options.AccessDeniedPath = "/Client/AccessDenied";
 });
+
+
+
 //DbConnection
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddScoped<IUserAuth, UserAuth_Repository>();
+
+
 
 var app = builder.Build();
 
@@ -33,6 +40,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
