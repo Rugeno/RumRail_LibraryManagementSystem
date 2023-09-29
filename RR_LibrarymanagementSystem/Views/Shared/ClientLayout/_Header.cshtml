@@ -1,0 +1,38 @@
+﻿<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a asp-controller="Client" asp-action="Index" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="~/client/assets/img/logo.png" alt=""> -->
+            <h1>Library Management Sytem</h1>
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a asp-controller="Client" asp-action="index">Home</a></li>
+                <li><a asp-controller="Client" asp-action="about">About</a></li>
+                <li><a asp-controller="Client" asp-action="cars">Books</a></li>
+                <li><a asp-controller="Client" asp-action="contact">Contact</a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-controller="Client" asp-action="Dashboard" class="get-a-quote bg-warning text-dark">Dashboard</a></li>
+                    <a class="get-a-quote" asp-controller="Client" asp-action="Logout">
+                        @*<li><button class="get-a-quote" type="submit">@User.FindFirst("Role").Value | Logout</button></li>*@
+                        @User.Identity.Name | Logout
+                    </a>
+                }
+                else
+                {
+                    <li><a class="get-a-quote bg-warning text-dark" asp-controller="Client" asp-action="Signup">Signup</a></li>
+                    <li><a class="get-a-quote" asp-controller="User" asp-action="Login">Login</a></li>
+                }
+
+            </ul>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->

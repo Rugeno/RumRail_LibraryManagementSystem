@@ -22,6 +22,11 @@ namespace RR_LibrarymanagementSystem.Controllers
             _userAuth = userAuth;
            
         }
+        public IActionResult Index()
+        {
+        
+            return View();
+        }
 
         [HttpGet]
         public IActionResult Login()
