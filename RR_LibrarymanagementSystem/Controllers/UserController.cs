@@ -16,16 +16,23 @@ namespace RR_LibrarymanagementSystem.Controllers
     public class UserController : Controller
     {
         private readonly IUserAuth _userAuth;
+        private readonly IBookDetail _bookDetail;
 
-        public UserController(IUserAuth userAuth)
+        public UserController(IUserAuth userAuth,IBookDetail bookDetail)
         {
             _userAuth = userAuth;
+            _bookDetail = bookDetail;
 
         }
         public IActionResult Index()
         {
 
             return View();
+        }
+        public IActionResult Books()
+        {
+            IEnumerable<BookDetails> obj = _bookDetail.GetActiveBookList();
+            return View(obj);
         }
 
         [HttpGet]
@@ -127,6 +134,12 @@ namespace RR_LibrarymanagementSystem.Controllers
             return View();
 
         }
+        public async Task<ActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("MyCookieAuth");
+            return RedirectToAction("Index");
 
+        }
     }
+   
 }

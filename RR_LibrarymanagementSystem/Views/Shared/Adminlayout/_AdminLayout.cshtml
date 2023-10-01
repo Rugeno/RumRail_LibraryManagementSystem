@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Hajur Ko &mdash; Libraray Management</title>
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="~/admin/assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/admin/assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/chocolat/dist/css/chocolat.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="~/admin/assets/modules/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="~/admin/assets/modules/summernote/summernote-bs4.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/admin/assets/css/style.css">
+    <link rel="stylesheet" href="~/admin/assets/css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+
+            <partial name="AdminLayout/_Navbar" />
+
+            <partial name="AdminLayout/_Sidebar" />
+
+            <!-- Main Content -->
+            <div class="main-content">
+                @RenderBody()
+            </div>
+
+
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="https://nauval.in/">Shivan Jung Kunwar & Team</a>
+                </div>
+                <div class="footer-right">
+
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="~/admin/assets/modules/jquery.min.js"></script>
+    <script src="~/admin/assets/modules/tooltip.js"></script>
+    <script src="~/admin/assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/admin/assets/modules/moment.min.js"></script>
+    <script src="~/admin/assets/js/stisla.js"></script>
+
+    <!-- JS Libraies -->
+    <script src="~/admin/assets/modules/jquery.sparkline.min.js"></script>
+    <script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="~/admin/assets/modules/chart.min.js"></script>
+    <script src="~/admin/assets/modules/summernote/summernote-bs4.js"></script>
+    <script src="~/admin/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="assets/js/page/bootstrap-modal.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/js/jquery.js"></script>
+
+    <!-- Template JS File -->
+    <script src="~/admin/assets/js/scripts.js"></script>
+    <script src="~/admin/assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+    @RenderSection("Script", false)
+
+</body>
+</html>

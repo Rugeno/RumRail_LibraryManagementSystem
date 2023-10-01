@@ -1,0 +1,31 @@
+﻿<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <a asp-controller="Client" asp-action="index">Library Management</a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a asp-controller="Client" asp-action="index">CR</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="active">
+                <a href="#" class="nav-link "><i class="fas bi bi-speedometer"></i><span>Dashboard</span></a>
+
+            </li>
+            <li class="menu-header">Reports</li>
+            @*<li class="active">
+                <a asp-controller="Admin" asp-action="Booking" class="nav-link "><i class="fas bi bi-car-front-fill"></i><span>Booking</span></a>
+            </li>*@
+            <li class="active">
+                <a asp-controller="Admin" asp-action="Report" class="nav-link "><i class="fas bi bi-bar-chart"></i><span>Report</span></a>
+            </li>
+            <li class="menu-header">Settings</li>
+            <li class="active">
+                <a asp-controller="Admin" asp-action="BookIndex" class="nav-link "><i class="fas bi bi-file-earmark-plus"></i><span>Books</span></a>
+            </li>
+            @*<li class="active">
+                <a asp-controller="Admin" asp-action="UserIndex" class="nav-link "><i class="fas bi bi-people-fill"></i><span>Users</span></a>
+            </li>*@
+        </ul>
+    </aside>
+</div>

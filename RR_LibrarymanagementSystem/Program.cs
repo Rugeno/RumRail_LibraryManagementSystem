@@ -22,6 +22,7 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 
 builder.Services.AddScoped<IUserAuth, UserAuth_Repository>();
+builder.Services.AddScoped<IBookDetail, BookDetail_Repository>();
 
 
 
