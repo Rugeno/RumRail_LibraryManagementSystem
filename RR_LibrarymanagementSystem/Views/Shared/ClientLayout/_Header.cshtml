@@ -19,7 +19,7 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li><a asp-controller="Client" asp-action="Dashboard" class="get-a-quote bg-warning text-dark">Dashboard</a></li>
+                    <li><a asp-controller="User" asp-action="Dashboard" class="get-a-quote bg-warning text-dark">Dashboard</a></li>
                     <a class="get-a-quote" asp-controller="User" asp-action="Logout">
                         @*<li><button class="get-a-quote" type="submit">@User.FindFirst("Role").Value | Logout</button></li>*@
                         @User.Identity.Name | Logout

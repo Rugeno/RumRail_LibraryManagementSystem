@@ -38,7 +38,7 @@ namespace RR_LibrarymanagementSystem.Controllers
         [HttpGet]
         public IActionResult AddBook()
         {
-            return View(new BookDetails());
+            return View(new BookDetails_VM());
         }
 
         public IActionResult UpdateBook(int id)
@@ -52,15 +52,26 @@ namespace RR_LibrarymanagementSystem.Controllers
 
 
         [HttpPost]
-        public IActionResult AddBook(BookDetails obj)
+        public IActionResult AddBook(BookDetails_VM obj)
         {
-            //if (ModelState.IsValid)
-            //{
+           if (ModelState.IsValid)
+            {
+            if (obj.UploadImage != null)
+            {
+                //Upload File
+                string folder = "wwwroot/uploadfiles/";
+                string fileurl = "/uploadfiles/";
+                string guid = Guid.NewGuid().ToString();
+                fileurl += guid + obj.UploadImage.FileName;
+                folder += guid + obj.UploadImage.FileName;
+                string serverFolder = Path.Combine(Directory.GetCurrentDirectory(), folder);
 
+                obj.UploadImage.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
                 BookDetails data = new BookDetails();
                 data.BookName = obj.BookName;
                 data.Author = obj.Author;
                 data.Description = obj.Description;
+                data.UploadImage = fileurl;
                 data.CreatedBy = User.Identity.Name; //User Role
                 data.Stock = obj.Stock;
                 string output = _bookDetail.SaveBookDetail(data);
@@ -69,9 +80,10 @@ namespace RR_LibrarymanagementSystem.Controllers
                     return RedirectToAction("BookIndex");
                 }
 
+            }
                 return View();
-            ////}
-            //return View();
+            }
+            return View();
         }
 
         [HttpPost]
@@ -95,6 +107,24 @@ namespace RR_LibrarymanagementSystem.Controllers
             return RedirectToAction("BookIndex");
         }
 
+
+        public IActionResult Booking()
+        {
+            IEnumerable<BookingDetailList> obj = _bookDetail.GetBookingDetails();
+            return View(obj);
+        }
+        public IActionResult BookBookingDetail(int id)
+        {
+            BookingDetailList obj = _bookDetail.GetBookingDetailById(id);
+            return Json(obj);
+        }
+
+        [HttpPost]
+        public IActionResult VerifyBookingDetail(int id)
+        {
+            string obj = _bookDetail.VerifyBookingDetailById(id);
+            return Json(obj);
+        }
 
 
 

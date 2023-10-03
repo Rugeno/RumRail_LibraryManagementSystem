@@ -26,7 +26,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
                 {
                     DynamicParameters param = new DynamicParameters();
                     param.Add("@Id", id);
-                    string output = conn.ExecuteScalar<string>("USP_DeleteCarDetails", param, commandType: CommandType.StoredProcedure);
+                    string output = conn.ExecuteScalar<string>("USP_DeletebookDetails", param, commandType: CommandType.StoredProcedure);
                     return output;
                 }
             }
@@ -104,6 +104,7 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
                     param.Add("@BookName", obj.BookName);
                     param.Add("@Author", obj.Author);
                     param.Add("@CreatedBy", obj.CreatedBy);
+                    param.Add("@UploadImage", obj.UploadImage);
                     param.Add("@Description", obj.Description);
                     param.Add("@Stock", obj.Stock);
                     string output = conn.ExecuteScalar<string>("USP_SaveBookDetails", param, commandType: CommandType.StoredProcedure);
@@ -139,10 +140,126 @@ namespace RR_LibraryManagementSystem.DataAccess.Repository
             }
         }
 
- 
-  
 
-   
+        public string SaveBooking(BookingDetail obj)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@StartDate", obj.StartDate);
+                    param.Add("@EndDate", obj.EndDate);
+                    param.Add("@NoOfDays", obj.NoOfDays);
+                    param.Add("@BookId", obj.BookId);
+                    param.Add("@RequestUser", obj.RequestUser);
+                    string output = conn.ExecuteScalar<string>("USP_SaveBookingDetails", param, commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+
+        //BOOKING DETAILS
+
+        public BookingDetailList GetBookingDetailById(int id)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@Id", id);
+                    BookingDetailList output = conn.QueryFirstOrDefault<BookingDetailList>("USP_GetBookingDetailById", param, commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<BookingDetailList> GetBookingDetailsOfUser(int id)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@Id", id);
+                    IEnumerable<BookingDetailList> output = conn.Query<BookingDetailList>("USP_GetBookingListOfUser", param, commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<BookingDetailList> GetBookingDetails()
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    IEnumerable<BookingDetailList> output = conn.Query<BookingDetailList>("USP_GetBookingList", commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+
+        public string VerifyBookingDetailById(int id)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@Id", id);
+                    string output = conn.ExecuteScalar<string>("USP_VerifyBookingById", param, commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public string ReturnBookingById(int id)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connection.DBConnection))
+                {
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@Id", id);
+                    string output = conn.ExecuteScalar<string>("USP_ReturnBookingById", param, commandType: CommandType.StoredProcedure);
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+
     }
 }
 

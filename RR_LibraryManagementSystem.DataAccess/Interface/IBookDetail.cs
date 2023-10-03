@@ -16,7 +16,16 @@ namespace RR_LibraryManagementSystem.DataAccess.Interface
 
         IEnumerable<BookDetails> GetActiveBookList();
 
-       
+        IEnumerable<BookingDetailList> GetBookingDetails();
+        IEnumerable<BookingDetailList> GetBookingDetailsOfUser(int id);
+
+        string SaveBooking(BookingDetail obj);
+        BookingDetailList GetBookingDetailById(int id);
+        string VerifyBookingDetailById(int id);
+
+        string ReturnBookingById(int id);
+
+
     }
 }
 

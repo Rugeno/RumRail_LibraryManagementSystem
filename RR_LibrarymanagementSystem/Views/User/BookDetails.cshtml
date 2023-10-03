@@ -1,0 +1,152 @@
+@model RR_LibraryManagementSystem.DataAccess.Domain.BookDetails;
+@{
+    Layout = "ClientLayout/_ClientLayout";
+}
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+            <div class="container position-relative">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>Service Details</h2>
+                        <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Service Details</li>
+                </ol>
+            </div>
+        </nav>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Service Details Section ======= -->
+    <section id="service-details" class="service-details">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4">
+                    <div class="services-list">
+                        <a>Book Name: @Model.BookName</a>
+                        <a>Author: @Model.Author</a>
+                        <a>Stock: @Model.Stock</a>
+
+                    </div>
+
+                    <h4>Rent a Book</h4>
+                    <div class="row py-2">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Start Date</label>
+                                <input id="startDate" class="form-control" type="date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>End Date</label>
+                                <input id="endDate" class="form-control" type="date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>No of Days</label>
+                                <input id="days" class="form-control" type="number" disabled />
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                     <input id="hiddenAuthId" value="@User.FindFirst("UserId").Value" hidden></input>
+                       
+                    
+
+
+                    <div class="mt-4">
+                        <a id="btn_book" class="btn btn-success">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <img src="@Model.UploadImage" alt="" class="img-fluid services-img">
+                    <h3>About @Model.BookName</h3>
+                    <p><strong>Rs. @Model.Author</strong></p>
+                    <p>@Model.Description</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Service Details Section -->
+
+</main><!-- End #main -->
+
+@section Script{
+    <script>
+        $(function () {
+            $('#startDate').on('change', function () {
+                CalculateDay();
+            });
+
+            $('#endDate').on('change', function () {
+                CalculateDay();
+            });
+
+            $('#btn_book').on('click', function () {
+                if ($('#hiddenAuthId').length == 1) {
+                    debugger;
+                    var startDate = $('#startDate').val();
+                    var endDate = $('#endDate').val();
+                    var obj = new Object();
+                    obj.StartDate = startDate.replaceAll('-','/');
+                    obj.EndDate = endDate.replaceAll('-','/');
+                    obj.NoOfDays = parseInt($('#days').val());
+                    obj.RequestUser = parseInt($('#hiddenAuthId').val());
+                    obj.BookId = parseInt(@Model.Id);
+
+                    console.log(obj);
+
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("BookBooking", "User")',
+                        data: {
+                            obj: obj
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            if(data = "Success"){
+                                location.href = "@Url.Action("Dashboard","Client")";
+                            }else{
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("Error")
+                        }
+                    });
+                }else {
+                    window.location.href = '/Client/Login';
+                };
+            });
+        });
+    function CalculateDay() {
+        var startDate = $('#startDate').val();
+        var endDate = $('#endDate').val();
+
+        var d1 = (Date.parse(endDate) - Date.parse(startDate))/86400000;
+        $('#days').val(d1);
+    
+
+    }
+    </script>
+
+}

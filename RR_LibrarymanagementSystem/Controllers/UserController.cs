@@ -29,6 +29,14 @@ namespace RR_LibrarymanagementSystem.Controllers
 
             return View();
         }
+
+        public IActionResult Dashboard()
+        {
+            int userid = Int32.Parse(User.FindFirst("UserId").Value);
+            IEnumerable<BookingDetailList> obj = _bookDetail.GetBookingDetailsOfUser(userid);
+            return View(obj);
+        }
+
         public IActionResult Books()
         {
             IEnumerable<BookDetails> obj = _bookDetail.GetActiveBookList();
@@ -139,6 +147,32 @@ namespace RR_LibrarymanagementSystem.Controllers
             await HttpContext.SignOutAsync("MyCookieAuth");
             return RedirectToAction("Index");
 
+        }
+
+        public IActionResult BookDetails(int id)
+        {
+           
+            BookDetails obj = _bookDetail.GetBookDetailsById(id);
+            return View(obj);
+        }
+
+       
+
+        [HttpPost]
+        public IActionResult BookBooking(BookingDetail obj)
+        {
+            string output = _bookDetail.SaveBooking(obj);
+            if (output == "SUCCESS")
+            {
+                return Json(new { data = "Success" });
+            }
+            return Json(new { data = "Something Went Wrong !!!" });
+        }
+
+        public IActionResult ReturnBooking(int id)
+        {
+            string obj = _bookDetail.ReturnBookingById(id);
+            return RedirectToAction("Dashboard");
         }
     }
    

@@ -1,0 +1,84 @@
+@model IEnumerable<RR_LibraryManagementSystem.DataAccess.Domain.BookingDetailList>;
+@{
+    Layout = "ClientLayout/_ClientLayout";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="page-header d-flex align-items-center" style="background-image: url('~/client/assets/img/page-header.jpg');">
+            <div class="container position-relative">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>Bookings</h2>
+                        @*<p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Bookings</li>
+                </ol>
+            </div>
+        </nav>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Booked Book</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Booked From</th>
+                        <th scope="col">Booked To</th>
+                        <th scope="col">No Of Days</th>
+                        <th scope="col">Booked Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int counter = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope="col">@counter</td>
+                            <td scope="col">@item.BookName</td>
+                            <td scope="col">@item.Author</td>
+                            <td scope="col">@item.StartDate.ToString("dd MMMM yyyy")</td>
+                            <td scope="col">@item.EndDate.ToString("dd MMMM yyyy")</td>
+                            <td scope="col">@item.NoOfDays</td>
+                            @if (@item.Status)
+                            {
+                                <td scope="col"><a class="btn btn-success">Verified</a></td>
+                            }
+                            else
+                            {
+                                <td scope="col"><a class="btn btn-danger">Not Verified</a></td>
+                            }
+
+
+                          
+
+                            @if (!@item.Returned)
+                                {
+                                <td scope="col"><a asp-controller="User" asp-action="ReturnBooking" asp-route-id="@item.Id" class="btn btn-primary">Return</a></td>
+                                }
+
+                        </tr>
+                        counter++;
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+</main><!-- End #main -->

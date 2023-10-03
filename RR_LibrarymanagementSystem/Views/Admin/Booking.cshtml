@@ -1,0 +1,148 @@
+@model IEnumerable<RR_LibraryManagementSystem.DataAccess.Domain.BookingDetailList>;
+@{
+    Layout = "AdminLayout/_AdminLayout";
+}
+
+<section class="section">
+    <div class="section-header">
+        <h1>User</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+            <div class="breadcrumb-item">Booking</div>
+        </div>
+    </div>
+
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Booked By</th>
+                                    <th scope="col">Phone No</th>
+                                    <th scope="col">Booked Book</th>
+                                    <th scope="col">No Of Days</th>
+                                    <th scope="col">Booked Status</th>
+                                    <th scope="col">Cancelled</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int counter = 1;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td scope="col">@counter</td>
+                                        <td scope="col">@item.RequestUser</td>
+                                        <td scope="col">@item.PhoneNo</td>
+                                        <td scope="col">@item.BookName</td>
+                                        <td scope="col">@item.NoOfDays</td>
+                                        @if (@item.Status)
+                                        {
+                                            <td scope="col"><span class="badge badge-success">Verified</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td scope="col"><span class="badge badge-danger">Not Verified</span></td>
+                                        }
+                                        @if (@item.Returned)
+                                        {
+                                            <td scope="col"><span class="badge badge-danger">Returned</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td scope="col"><span class="badge badge-success">Active</span></td>
+                                        }
+                                       
+                                        @if (!@item.Returned)
+                                        {
+                                            <td scope="col">
+                                                <a id="@item.Id" class="btn btn-primary text-white btn_view">View</a>
+                                            </td>
+                                        }
+
+                                    </tr>
+                                    counter++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+@section Script{
+    <script>
+        $(function(){
+            $(".btn_view").on('click', function(){
+                var id = parseInt($(this).attr("id"));
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("BookBookingDetail","Admin")',
+                    data: {
+                        id: id
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        htm = '';
+                        htm += '<div><table>';
+                        htm += '<tr><td>Booked By: ' + data.requestUser + '</td></tr >';
+                        htm += '<tr><td>Phone No: ' + data.phoneNo + '</td></tr >';
+                        htm += '<tr><td>BookName: ' + data.bookName + ' </td></tr >';
+                        htm += '<tr><td>Book Author: ' + data.author + ' </td></tr >';
+                        htm += '<tr><td>Booked From: ' + data.startDate.split('T')[0] + ' and Booked Till: ' + data.endDate.split('T')[0] + '</td></tr >';
+                        htm += '<tr><td>No Of Days: ' + data.noOfDays + ' days </td></tr >';
+                        htm += '</table></div>';
+                            $.confirm({
+                                title: 'Booking Detail',
+                                content: htm,
+                                buttons: {
+                                    Verify: function () {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: '@Url.Action("VerifyBookingDetail","Admin")',
+                                            data: {
+                                                id: id
+                                            },
+                                            dataType: "json",
+                                            success: function () {
+                                                location.href = "@Url.Action("Booking","Admin")";
+                                            },
+                                            error: function () {
+                                                alert("Error")
+                                            }
+                                        });
+                                    },
+                                    cancel: function () {
+                                    }
+                                },
+                                boxWidth: '30%',
+                                useBootstrap: false
+                            });
+                    },
+                    error: function () {
+                        alert("Error")
+                    }
+                });
+
+
+            })
+        })
+    </script>
+
+}

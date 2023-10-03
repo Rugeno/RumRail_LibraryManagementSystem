@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DZ8cvDYz+c6AcmIoJAJMhJsVSvkwUKZJnlpnl6QCs1c=",
+  "Hash": "RadBXB3fsAJCss3ziQwC/ecy3xxUjoWfGyhLyPjGCtg=",
   "Source": "RR_LibrarymanagementSystem",
   "BasePath": "_content/RR_LibrarymanagementSystem",
   "Mode": "Default",
@@ -82431,6 +82431,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploadfiles/bc8bef13-7b5f-4424-b3b1-8bd4cd8aaa63bill.pdf"
+    },
+    {
+      "Identity": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/wwwroot/uploadfiles/bd25e91e-c75b-4f2d-86e4-b5229bdb3385Screenshot 2023-10-03 at 08.45.10.png",
+      "SourceId": "RR_LibrarymanagementSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/wwwroot/",
+      "BasePath": "_content/RR_LibrarymanagementSystem",
+      "RelativePath": "uploadfiles/bd25e91e-c75b-4f2d-86e4-b5229bdb3385Screenshot 2023-10-03 at 08.45.10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploadfiles/bd25e91e-c75b-4f2d-86e4-b5229bdb3385Screenshot 2023-10-03 at 08.45.10.png"
     },
     {
       "Identity": "/Users/shivan/RumRail_LibraryManagementSystem/RR_LibrarymanagementSystem/wwwroot/uploadfiles/c5e9ec80-f632-4b63-b443-d8084024de16grahame-jenkins-p7tai9P7H-s-unsplash.jpg",

@@ -4,7 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RR_LibraryManagementSystem.DataAccess.Domain
 {
-    public class BookDetails
+
+
+    public class BookDetails_VM
     {
         public int Id { get; set; }
         [Required]
@@ -13,10 +15,33 @@ namespace RR_LibraryManagementSystem.DataAccess.Domain
         public string Author { get; set; }
         [Required]
         public bool Status { get; set; }
-        
+
         [Required]
         public string Description { get; set; }
         [Required]
+        public int Stock { get; set; }
+
+   
+       
+        [Required]
+        public IFormFile UploadImage { get; set; }
+       
+    }
+
+    public class BookDetails
+    {
+        public int Id { get; set; }
+    
+        public string BookName { get; set; }
+    
+        public string Author { get; set; }
+   
+        public bool Status { get; set; }
+        
+ 
+        public string Description { get; set; }
+        public string UploadImage { get; set; }
+
         public int Stock { get; set; }
 
         public string CreatedBy { get; set; }
@@ -29,12 +54,11 @@ namespace RR_LibraryManagementSystem.DataAccess.Domain
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal Amount { get; set; }
-        public string BookType { get; set; }
         public int NoOfDays { get; set; }
         public int RequestUser { get; set; }
         public int BookId { get; set; }
         public bool Status { get; set; }
+        public string Author { get; set; }
     }
 
     public class BookingDetailList
@@ -42,14 +66,13 @@ namespace RR_LibraryManagementSystem.DataAccess.Domain
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal Amount { get; set; }
-        public string BookType { get; set; }
         public int NoOfDays { get; set; }
         public string RequestUser { get; set; }
         public string PhoneNo { get; set; }
         public string BookName { get; set; }
         public bool Status { get; set; }
-        public bool Cancelled { get; set; }
+        public bool Returned { get; set; }
+        public string Author { get; set; }
     }
 
     public class Report
